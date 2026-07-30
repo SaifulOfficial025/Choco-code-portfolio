@@ -97,8 +97,8 @@ export const CursorGradient = () => {
                 <div
                   className='rounded-full'
                   style={{
-                    width: `${particle.size * 8}px`,
-                    height: `${particle.size * 8}px`,
+                    width: `${particle.size * 0}px`,
+                    height: `${particle.size * 0}px`,
                     background: `radial-gradient(
                       circle at center,
                       ${particle.isYellow ? `rgba(249, 168, 37, ${particle.intensity})` : `rgba(67, 160, 71, ${particle.intensity})`},
