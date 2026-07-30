@@ -1,10 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --font-sans: 'Roboto Flex', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   --font-serif: 'Playfair Display', Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --cc-green: #2E7D32;
+  --cc-green-light: #43A047;
+  --cc-yellow: #F9A825;
+  --cc-yellow-light: #FFD54F;
+  --cc-cream: #FFFDF7;
+  --cc-white: #FFFFFF;
+  --cc-black: #1A1A1A;
+  --cc-gray: #6B7280;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body, #root {
   font-family: var(--font-sans);
+  background-color: var(--cc-cream);
+  color: var(--cc-black);
 }
 
 /* Use Playfair Display for headings */
@@ -12,6 +31,97 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #43A047;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2E7D32;
+}
+
+/* Glassmorphism utility */
+@layer utilities {
+  .glass-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(46, 125, 50, 0.1);
+  }
+  .glass-green {
+    background: rgba(46, 125, 50, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(46, 125, 50, 0.12);
+  }
+  .text-gradient-choco {
+    background: linear-gradient(135deg, #2E7D32 0%, #F9A825 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-yellow {
+    background: linear-gradient(135deg, #F9A825 0%, #FFD54F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glow-green {
+    box-shadow: 0 0 30px rgba(46, 125, 50, 0.15), 0 0 60px rgba(46, 125, 50, 0.05);
+  }
+  .glow-green-sm {
+    box-shadow: 0 0 15px rgba(46, 125, 50, 0.1);
+  }
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(249, 168, 37, 0.2);
+  }
+}
+
+/* Floating code particles */
+.particle {
+  position: absolute;
+  font-family: var(--font-mono);
+  color: rgba(46, 125, 50, 0.07);
+  font-size: 14px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Shimmer effect for buttons */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer-sweep 3s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Selection color */
+::selection {
+  background: rgba(46, 125, 50, 0.15);
+  color: #1A1A1A;
+}

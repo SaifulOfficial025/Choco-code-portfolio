@@ -2,43 +2,60 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-[#b3ecf9] pt-20 pb-8 mt-16 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative pt-20 pb-8 mt-16 overflow-hidden">
+      {/* Background - green gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cc-green-dark via-cc-green to-cc-green-dark"></div>
+      
+      {/* Top border glow */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cc-yellow/40 to-transparent"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
           {/* Column 1 - Brand & Subscription */}
           <div className="lg:col-span-4">
             <div className="mb-6">
-              <img src="/logo-blue-01.svg" alt="App Oreo Logo" className="h-16" />
+              <a href="#" className="flex items-center space-x-1 group w-max">
+                <span className="text-white/50 font-mono text-lg group-hover:text-cc-yellow transition-colors">&lt;</span>
+                <span className="text-3xl font-serif font-bold text-white tracking-tight">
+                  Choco Code
+                </span>
+                <span className="text-white/50 font-mono text-lg group-hover:text-cc-yellow transition-colors">/&gt;</span>
+              </a>
             </div>
-            <p className="text-[#334155] text-[15px] mb-8 max-w-sm leading-relaxed">
-              AI development services with 100% client satisfaction.
+            <p className="text-white/60 text-[15px] mb-8 max-w-sm leading-relaxed">
+              AI development services with 100% client satisfaction. Crafting digital excellence, one project at a time.
             </p>
             
             <form className="flex w-full max-w-sm mb-8" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
-                placeholder="Send Email" 
-                className="w-full px-4 py-2.5 text-sm bg-transparent border border-[#0284c7] text-gray-800 focus:outline-none placeholder-gray-500 rounded-l-md transition-colors focus:bg-white/40" 
+                placeholder="Your email address" 
+                className="w-full px-4 py-2.5 text-sm bg-white/10 border border-white/20 text-white focus:outline-none focus:border-cc-yellow placeholder-white/40 rounded-l-lg transition-colors font-mono" 
                 required
               />
               <button 
                 type="submit" 
-                className="bg-[#0284c7] text-white px-6 py-2.5 text-sm font-semibold rounded-r-md hover:bg-[#0369a1] transition-colors"
+                className="shimmer-btn bg-gradient-to-r from-cc-yellow to-cc-yellow-light text-cc-black px-6 py-2.5 text-sm font-bold rounded-r-lg hover:shadow-cc-yellow/30 hover:shadow-lg transition-all"
               >
                 Send
               </button>
             </form>
             
-            <div className="flex space-x-5 text-[#0284c7]">
-              <a href="#" className="hover:text-blue-900 transition-colors" aria-label="Home">
+            <div className="flex space-x-5 text-white/50">
+              <a href="#" className="hover:text-cc-yellow transition-colors duration-300" aria-label="Home">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                 </svg>
               </a>
-              <a href="#" className="hover:text-blue-900 transition-colors" aria-label="LinkedIn">
+              <a href="#" className="hover:text-cc-yellow transition-colors duration-300" aria-label="LinkedIn">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+              <a href="#" className="hover:text-cc-yellow transition-colors duration-300" aria-label="GitHub">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
               </a>
             </div>
@@ -46,74 +63,51 @@ function Footer() {
 
           {/* Column 2 - Committed To */}
           <div className="lg:col-span-4">
-            <h3 className="font-bold text-gray-900 text-lg mb-6 tracking-wide">Committed To</h3>
-            <p className="text-[#334155] text-[15px] leading-[1.8] mb-6 max-w-sm">
-              Ordet is a protégé of the Chicago tommusryve educate and collaborate with le ifference entermentally ant soccally. Let's ca Mare.
+            <h3 className="font-bold text-white text-lg mb-6 tracking-wide font-serif">Committed To</h3>
+            <p className="text-white/50 text-[15px] leading-[1.8] mb-6 max-w-sm">
+              Choco Code is committed to excellence in digital solutions. We educate, collaborate, and build lasting partnerships with clients worldwide.
             </p>
-            <a href="#" className="text-[15px] text-[#4f95c8] hover:text-blue-700 hover:underline flex items-center transition-colors">
-              Go to profile <span className="ml-1 text-[10px] font-bold mt-0.5">&gt;</span>
+            <a href="#" className="text-[15px] text-cc-yellow-light hover:text-cc-yellow flex items-center transition-colors duration-300 font-medium">
+              Go to profile <svg className="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path></svg>
             </a>
           </div>
 
           {/* Column 3 - Quick Links */}
           <div className="lg:col-span-2">
-            <h3 className="font-bold text-gray-900 text-lg mb-6 tracking-wide">Quick Links</h3>
+            <h3 className="font-bold text-white text-lg mb-6 tracking-wide font-serif">Quick Links</h3>
             <ul className="space-y-4">
-              <li>
-                <a href="#" className="text-[15px] text-[#4f95c8] hover:text-blue-700 hover:underline flex items-center transition-colors">
-                  Home <span className="ml-1 text-[10px] font-bold mt-0.5">&gt;</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[15px] text-[#4f95c8] hover:text-blue-700 hover:underline flex items-center transition-colors">
-                  Portfolio <span className="ml-1 text-[10px] font-bold mt-0.5">&gt;</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[15px] text-[#4f95c8] hover:text-blue-700 hover:underline flex items-center transition-colors">
-                  Services <span className="ml-1 text-[10px] font-bold mt-0.5">&gt;</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[15px] text-[#4f95c8] hover:text-blue-700 hover:underline flex items-center transition-colors">
-                  Teams <span className="ml-1 text-[10px] font-bold mt-0.5">&gt;</span>
-                </a>
-              </li>
+              {['Home', 'Portfolio', 'Services', 'Teams'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-[15px] text-white/50 hover:text-cc-yellow-light flex items-center transition-colors duration-300 group">
+                    <span className="font-mono text-white/20 mr-2 text-xs group-hover:text-cc-yellow transition-colors">//</span>
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Column 4 - Resources */}
           <div className="lg:col-span-2">
-            <h3 className="font-bold text-gray-900 text-lg mb-6 tracking-wide">Resources</h3>
+            <h3 className="font-bold text-white text-lg mb-6 tracking-wide font-serif">Resources</h3>
             <ul className="space-y-4">
-              <li>
-                <a href="#" className="text-[15px] text-[#4f95c8] hover:text-blue-700 hover:underline flex items-center transition-colors">
-                  Fiverr Profile <span className="ml-1 text-[10px] font-bold mt-0.5">&gt;</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[15px] text-[#4f95c8] hover:text-blue-700 hover:underline flex items-center transition-colors">
-                  Contact Us <span className="ml-1 text-[10px] font-bold mt-0.5">&gt;</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[15px] text-[#4f95c8] hover:text-blue-700 hover:underline flex items-center transition-colors">
-                  Client Reviews <span className="ml-1 text-[10px] font-bold mt-0.5">&gt;</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[15px] text-[#4f95c8] hover:text-blue-700 hover:underline flex items-center transition-colors">
-                  Our Goals <span className="ml-1 text-[10px] font-bold mt-0.5">&gt;</span>
-                </a>
-              </li>
+              {['Fiverr Profile', 'Contact Us', 'Client Reviews', 'Our Goals'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-[15px] text-white/50 hover:text-cc-yellow-light flex items-center transition-colors duration-300 group">
+                    <span className="font-mono text-white/20 mr-2 text-xs group-hover:text-cc-yellow transition-colors">//</span>
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
         </div>
         
-        {/* Copyright Section */}
-        <div className="text-center text-[13px] text-gray-500 pt-8 mt-12 pb-2">
-          © 2023 Team A. All rights reserved.
+        <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent mb-8"></div>
+
+        <div className="text-center text-[13px] text-white/30 pb-2 font-mono">
+          <span className="text-cc-yellow/30">{'/*'}</span> © 2024 Choco Code. All rights reserved. <span className="text-cc-yellow/30">{'*/'}</span>
         </div>
       </div>
     </footer>
