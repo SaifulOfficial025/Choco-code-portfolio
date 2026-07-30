@@ -1,49 +1,47 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
+import SocialCards from '../../components/ui/card-fan-carousel';
 
 const teamMembers = [
-  { id: 1, name: "Sharif Mahamud", role: "Python Developer", initials: "SM" },
-  { id: 2, name: "Sanjida Khanom", role: "Web Developer", initials: "SK" },
-  { id: 3, name: "Rafsan Munnaf", role: "AI Engineer", initials: "RM" },
-  { id: 4, name: "Gazi Alauddin", role: "CEO", initials: "GA" },
-  { id: 5, name: "Kawsar Hossain", role: "Software Engineer (Flutter)", initials: "KH" },
-  { id: 6, name: "Rimon Islam", role: "UI/UX Designer", initials: "RI" },
-  { id: 7, name: "Tanvir Ahmed", role: "Backend Developer", initials: "TA" },
+  { 
+    name: "Sharif Mahamud", 
+    role: "Python Developer", 
+    imgUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop" 
+  },
+  { 
+    name: "Sanjida Khanom", 
+    role: "Web Developer", 
+    imgUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop" 
+  },
+  { 
+    name: "Rafsan Munnaf", 
+    role: "AI Engineer", 
+    imgUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop" 
+  },
+  { 
+    name: "Gazi Alauddin", 
+    role: "CEO", 
+    imgUrl: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=600&fit=crop" 
+  },
+  { 
+    name: "Kawsar Hossain", 
+    role: "Software Engineer (Flutter)", 
+    imgUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop" 
+  },
+  { 
+    name: "Rimon Islam", 
+    role: "UI/UX Designer", 
+    imgUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop" 
+  },
+  { 
+    name: "Tanvir Ahmed", 
+    role: "Backend Developer", 
+    imgUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=600&fit=crop" 
+  },
 ];
 
 function Ourteam() {
-  const [activeIndex, setActiveIndex] = useState(2);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), { threshold: 0.1 });
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    const interval = setInterval(() => setActiveIndex((prev) => (prev + 1) % teamMembers.length), 2500);
-    return () => clearInterval(interval);
-  }, [isVisible]);
-
-  const getPositionStyles = (index) => {
-    const offset = (index - activeIndex + teamMembers.length) % teamMembers.length;
-    let style = { transition: 'all 800ms cubic-bezier(0.25, 1, 0.5, 1)', position: 'absolute', top: '50%', marginTop: '-120px' };
-    switch (offset) {
-      case 0: return { ...style, left: '50%', transform: 'translate(-50%, -10%) scale(1.3)', opacity: 1, zIndex: 40 };
-      case 1: return { ...style, left: '72%', transform: 'translate(-50%, 0) scale(0.9)', opacity: 0.8, zIndex: 30 };
-      case 2: return { ...style, left: '92%', transform: 'translate(-50%, 15%) scale(0.65)', opacity: 0.3, zIndex: 20 };
-      case 3: return { ...style, left: '115%', transform: 'translate(-50%, 25%) scale(0.5)', opacity: 0, zIndex: 10 };
-      case 4: return { ...style, left: '-15%', transform: 'translate(-50%, 25%) scale(0.5)', opacity: 0, zIndex: 10 };
-      case 5: return { ...style, left: '8%', transform: 'translate(-50%, 15%) scale(0.65)', opacity: 0.3, zIndex: 20 };
-      case 6: return { ...style, left: '28%', transform: 'translate(-50%, 0) scale(0.9)', opacity: 0.8, zIndex: 30 };
-      default: return style;
-    }
-  };
-
   return (
-    <section ref={sectionRef} className="w-full py-24 overflow-hidden relative">
+    <section className="w-full py-24 overflow-hidden relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cc-yellow-50/40 to-transparent pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -57,28 +55,8 @@ function Ourteam() {
           </p>
         </div>
 
-        <div className="relative w-full h-[350px] md:h-[450px] mt-10">
-          {teamMembers.map((member, index) => {
-            const offset = (index - activeIndex + teamMembers.length) % teamMembers.length;
-            const isCenter = offset === 0;
-            return (
-              <div key={member.id} className="flex flex-col items-center justify-center w-[160px] md:w-[220px]" style={getPositionStyles(index)}>
-                <div className={`relative w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden mb-6 flex items-center justify-center transition-all duration-800 ${
-                  isCenter 
-                    ? 'border-[3px] border-cc-green shadow-[0_0_40px_rgba(46,125,50,0.15)] ring-4 ring-cc-green/10 bg-gradient-to-br from-cc-green-50 to-cc-yellow-50' 
-                    : 'border border-gray-200 shadow-sm bg-gray-50'
-                }`}>
-                  <span className={`text-2xl md:text-3xl font-serif font-bold transition-colors duration-500 ${
-                    isCenter ? 'text-gradient-choco' : 'text-gray-300'
-                  }`}>{member.initials}</span>
-                </div>
-                <div className={`text-center transition-all duration-800 ${isCenter ? 'scale-110 mt-2' : 'scale-100 opacity-60'}`}>
-                  <h3 className={`font-bold text-[15px] md:text-[17px] whitespace-nowrap tracking-tight font-serif ${isCenter ? 'text-cc-black' : 'text-gray-500'}`}>{member.name}</h3>
-                  <p className={`text-[11px] md:text-[13px] mt-1 font-mono ${isCenter ? 'text-cc-green' : 'text-gray-400'}`}>{member.role}</p>
-                </div>
-              </div>
-            );
-          })}
+        <div className="mt-10">
+          <SocialCards cards={teamMembers} />
         </div>
       </div>
     </section>
