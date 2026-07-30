@@ -26,7 +26,7 @@ function OurWorks() {
   const gridProjects = isExpanded ? allProjects.slice(1) : allProjects.slice(1, 4);
 
   return (
-    <section ref={sectionRef} className="w-full py-24 overflow-hidden relative">
+    <section id="portfolio" ref={sectionRef} className="w-full py-24 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-cc-green font-mono text-sm mb-4 tracking-wide">{'<'} Our Work Sample {'/>'}</p>

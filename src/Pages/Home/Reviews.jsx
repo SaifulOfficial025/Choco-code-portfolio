@@ -117,7 +117,7 @@ const CoverflowCarousel = ({ reviews }) => {
 
 function Reviews() {
   return (
-    <section className="w-full py-24 overflow-hidden relative bg-white">
+    <section id="reviews" className="w-full py-24 overflow-hidden relative bg-white">
       <style>
         {`
           .coverflow-wrapper {

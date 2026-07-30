@@ -25,7 +25,7 @@ function Hero() {
   }, [displayText, isDeleting, currentRoleIndex]);
 
   return (
-    <section className="w-full relative pt-32 pb-16 overflow-hidden">
+    <section id="home" className="w-full relative pt-32 pb-16 overflow-hidden">
       <div className="absolute top-20 right-0 w-[900px] h-[500px] bg-gradient-to-br from-cc-green-50/50 via-cc-yellow-50/30 to-transparent rounded-full blur-3xl pointer-events-none translate-x-1/3"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -131,7 +131,7 @@ function Ourservices() {
   const col3 = [services[2], services[5]];
 
   return (
-    <section ref={sectionRef} className="w-full py-24 relative overflow-hidden">
+    <section id="services" ref={sectionRef} className="w-full py-24 relative overflow-hidden">
       {/* Background stays the same light theme */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cc-green-50/40 to-transparent pointer-events-none"></div>
       
