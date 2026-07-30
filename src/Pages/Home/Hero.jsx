@@ -40,7 +40,7 @@ function Hero() {
 
             <h1 className="text-5xl md:text-6xl lg:text-[70px] font-extrabold text-cc-black leading-[1.08] tracking-tight font-serif mb-8">
               Professional <br/>
-              <span className="text-gradient-choco inline-block min-w-[280px]">
+              <span className="text-gradient-choco inline-block min-w-[280px] py-1">
                 {displayText}
                 <span className="animate-blink text-cc-yellow font-mono font-light">|</span>
               </span>
