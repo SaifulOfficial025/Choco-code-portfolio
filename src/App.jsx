@@ -4,11 +4,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { RouterProvider } from 'react-router-dom';
 import { router } from './router'; 
-
+import { CursorGradient } from './components/ui/cursor-gradient';
 
 function App() {
   return  (  
-    <RouterProvider router={router} />
+    <>
+      <CursorGradient />
+      <RouterProvider router={router} />
+    </>
   );
 }
 

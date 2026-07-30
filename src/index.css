@@ -24,6 +24,7 @@ html, body, #root {
   font-family: var(--font-sans);
   background-color: var(--cc-cream);
   color: var(--cc-black);
+  cursor: none;
 }
 
 /* Use Playfair Display for headings */
