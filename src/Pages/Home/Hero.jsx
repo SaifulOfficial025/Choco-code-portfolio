@@ -75,7 +75,7 @@ function Hero() {
              <div className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] xl:w-[600px] xl:h-[600px]">
                <div className="w-full h-full rounded-full p-[8px] bg-gradient-to-r from-cc-yellow to-cc-green-light shimmer-btn drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] relative overflow-hidden group transition-all duration-300 hover:shadow-cc-green/40 hover:shadow-2xl hover:-translate-y-1">
                  <img 
-                   src="/Gazi vai-Uu6qjG0T.png" 
+                   src="/Choco-Code-Profile-Picture.png" 
                    alt="GaziAlauddin" 
                    className="w-full h-full object-contain object-bottom rounded-full relative z-10 border-4 border-cc-yellow-100 "
                  />
