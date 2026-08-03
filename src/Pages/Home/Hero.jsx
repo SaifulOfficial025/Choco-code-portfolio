@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const roles = ["AI Developer", "Web Developer", "App Developer", "CMS Developer"];
-const skills = ['Mobile App Development', 'AI & Machine Learning', 'Flutter Developer', 'Web Applications', 'CMS Development', 'Computer Vision', 'Data Analytics', 'Chatbot Development'];
+const roles = ["Web Developer", "App Developer", "CMS Developer"];
+const skills = ['Mobile App Development', "Flutter Developer", "React Native", 'Web App Development', "ReactJS", "Wordpress Development"];
 
 function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);

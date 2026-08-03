@@ -211,7 +211,15 @@ export default function SocialCards({ cards }) {
         if (activeSlot !== slot) { activeSlot = slot; updateHoverLayout(slot); }
       };
       el.addEventListener("mouseenter", handler);
-      return { el, handler };
+
+      const touchHandler = () => {
+        if (isAnimating.current) return;
+        if (leaveTimer) { clearTimeout(leaveTimer); leaveTimer = null; }
+        if (activeSlot !== slot) { activeSlot = slot; updateHoverLayout(slot); }
+      };
+      el.addEventListener("touchstart", touchHandler, { passive: true });
+
+      return { el, handler, touchHandler };
     });
 
     const onMouseLeave = () => {
@@ -221,12 +229,47 @@ export default function SocialCards({ cards }) {
     };
     container.addEventListener("mouseleave", onMouseLeave);
 
+    const onDocumentTouch = (e) => {
+      if (isAnimating.current) return;
+      if (activeSlot !== null && !container.contains(e.target)) {
+        activeSlot = null;
+        updateHoverLayout(null);
+      }
+    };
+    document.addEventListener("touchstart", onDocumentTouch, { passive: true });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    const handleTouchStart = (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    };
+    const handleTouchMove = (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+    };
+    const handleTouchEnd = () => {
+      if (!needsPagination) return;
+      if (touchStartX - touchEndX > 50) cycle("right");
+      if (touchEndX - touchStartX > 50) cycle("left");
+    };
+
+    container.addEventListener("touchstart", handleTouchStart, { passive: true });
+    container.addEventListener("touchmove", handleTouchMove, { passive: true });
+    container.addEventListener("touchend", handleTouchEnd, { passive: true });
+
     const onResize = () => { if (!isAnimating.current) updateHoverLayout(activeSlot); };
     window.addEventListener("resize", onResize);
 
     return () => {
-      enterHandlers.forEach(({ el, handler }) => el.removeEventListener("mouseenter", handler));
+      enterHandlers.forEach(({ el, handler, touchHandler }) => {
+        el.removeEventListener("mouseenter", handler);
+        el.removeEventListener("touchstart", touchHandler);
+      });
       container.removeEventListener("mouseleave", onMouseLeave);
+      document.removeEventListener("touchstart", onDocumentTouch);
+      container.removeEventListener("touchstart", handleTouchStart);
+      container.removeEventListener("touchmove", handleTouchMove);
+      container.removeEventListener("touchend", handleTouchEnd);
       window.removeEventListener("resize", onResize);
       if (leaveTimer) clearTimeout(leaveTimer);
     };

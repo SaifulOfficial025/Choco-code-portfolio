@@ -3,45 +3,24 @@ import React, { useEffect, useRef, useState } from 'react';
 const services = [
   { 
     id: 1,
-    icon: "🤖", 
-    title: "AI Chatbot Development", 
-    desc: "Build intelligent, conversational chatbots tailored to automate customer support and streamline communication.", 
-    imgUrl: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=800&fit=crop"
+    icon: "🌐", 
+    title: "Web Development", 
+    desc: "Custom web development solutions using modern technologies to build fast, secure, and scalable websites tailored to your brand.", 
+    imgUrl: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=800&fit=crop"
   },
   { 
     id: 2,
-    icon: "📷", 
-    title: "Computer Vision", 
-    desc: "Leverage image recognition and object detection to extract actionable insights from visual data.", 
-    imgUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=800&fit=crop"
+    icon: "📲", 
+    title: "App Development", 
+    desc: "End-to-end app development services crafting engaging, high-performance applications for diverse devices and platforms.", 
+    imgUrl: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=600&h=800&fit=crop"
   },
   { 
     id: 3,
-    icon: "🧠", 
-    title: "Core AI Models", 
-    desc: "Build and train custom AI models from scratch, including transformers, CNNs, RNNs, and foundation models.", 
-    imgUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=800&fit=crop"
-  },
-  { 
-    id: 4,
-    icon: "📱", 
-    title: "Mobile App Development", 
-    desc: "Design and develop seamless mobile experiences for iOS and Android platforms using modern frameworks.", 
-    imgUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=800&fit=crop"
-  },
-  { 
-    id: 5,
-    icon: "💻", 
-    title: "Web App Development", 
-    desc: "Create dynamic, responsive websites and web apps with robust backend and polished frontend interfaces.", 
-    imgUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=800&fit=crop"
-  },
-  { 
-    id: 6,
-    icon: "📊", 
-    title: "Data Analyst Services", 
-    desc: "Analyze business data to uncover trends, generate reports, and support data-driven decision-making.", 
-    imgUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=800&fit=crop"
+    icon: "📝", 
+    title: "Wordpress Development", 
+    desc: "Professional WordPress development including custom themes, plugins, and full-scale e-commerce solutions.", 
+    imgUrl: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=600&h=800&fit=crop"
   }
 ];
 
@@ -126,9 +105,9 @@ function Ourservices() {
     return () => observer.disconnect();
   }, []);
 
-  const col1 = [services[0], services[3]];
-  const col2 = [services[1], services[4]];
-  const col3 = [services[2], services[5]];
+  const col1 = services.filter((_, i) => i % 3 === 0);
+  const col2 = services.filter((_, i) => i % 3 === 1);
+  const col3 = services.filter((_, i) => i % 3 === 2);
 
   return (
     <section id="services" ref={sectionRef} className="w-full py-24 relative overflow-hidden">

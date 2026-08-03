@@ -3,29 +3,24 @@ import SocialCards from '../../components/ui/card-fan-carousel';
 
 const teamMembers = [
   { 
-    name: "Sharif Mahamud", 
-    role: "Python Developer", 
-    imgUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop" 
+    name: "Shafiur Rahman", 
+    role: "Wordpress developer", 
+    imgUrl: "/shafiur.jpeg" 
   },
   { 
-    name: "Sanjida Khanom", 
-    role: "Web Developer", 
-    imgUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop" 
+    name: "Md Mustakin Mahi", 
+    role: "Wordpress developer", 
+    imgUrl: "/mustakin.jpeg" 
   },
   { 
-    name: "Rafsan Munnaf", 
-    role: "AI Engineer", 
-    imgUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop" 
+    name: "Md Istiyak Ahmmed", 
+    role: "Wordpress developer", 
+    imgUrl: "/istiyak.jpeg" 
   },
   { 
-    name: "Gazi Alauddin", 
-    role: "CEO", 
-    imgUrl: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=600&fit=crop" 
-  },
-  { 
-    name: "Kawsar Hossain", 
-    role: "Software Engineer (Flutter)", 
-    imgUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop" 
+    name: "Apurbo Kumar das", 
+    role: "Webflow developer", 
+    imgUrl: "/apurbo.jpeg" 
   },
   { 
     name: "Rimon Islam", 
@@ -33,10 +28,15 @@ const teamMembers = [
     imgUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop" 
   },
   { 
+    name: "Rafsan Munnaf", 
+    role: "AI Engineer", 
+    imgUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop" 
+  },
+  { 
     name: "Tanvir Ahmed", 
     role: "Backend Developer", 
     imgUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=600&fit=crop" 
-  },
+  }
 ];
 
 function Ourteam() {
