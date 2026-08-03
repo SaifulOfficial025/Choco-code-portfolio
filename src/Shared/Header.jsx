@@ -46,7 +46,7 @@ function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <a 
-              href="#" 
+              href="https://www.fiverr.com/choco_code" 
               className="shimmer-btn inline-flex items-center bg-gradient-to-r from-cc-green to-cc-green-light text-white font-semibold py-2.5 px-6 rounded-lg shadow-lg shadow-cc-green/20 hover:shadow-cc-green/40 transition-all duration-300 hover:-translate-y-0.5 text-sm"
             >
               <span className="font-mono mr-2 text-xs opacity-70">//</span>

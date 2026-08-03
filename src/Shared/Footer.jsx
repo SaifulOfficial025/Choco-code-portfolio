@@ -27,7 +27,7 @@ function Footer() {
               AI development services with 100% client satisfaction. Crafting digital excellence, one project at a time.
             </p>
             
-            <form className="flex w-full max-w-sm mb-8" onSubmit={(e) => e.preventDefault()}>
+            {/* <form className="flex w-full max-w-sm mb-8" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
                 placeholder="Your email address" 
@@ -40,7 +40,7 @@ function Footer() {
               >
                 Send
               </button>
-            </form>
+            </form> */}
             
             <div className="flex space-x-5 text-white/50">
               <a href="#" className="hover:text-cc-yellow transition-colors duration-300" aria-label="Home">
