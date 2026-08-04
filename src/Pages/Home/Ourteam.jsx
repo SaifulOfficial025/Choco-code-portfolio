@@ -4,17 +4,17 @@ import SocialCards from '../../components/ui/card-fan-carousel';
 const teamMembers = [
   { 
     name: "Shafiur Rahman", 
-    role: "Wordpress developer", 
+    role: "Frontend developer (ReactJS)", 
     imgUrl: "/shafiur.jpeg" 
   },
   { 
     name: "Md Mustakin Mahi", 
-    role: "Wordpress developer", 
+    role: "Backend Developer (Django)", 
     imgUrl: "/mustakin.jpeg" 
   },
   { 
     name: "Md Istiyak Ahmmed", 
-    role: "Wordpress developer", 
+    role: "Mobile App Developer (Flutter)", 
     imgUrl: "/istiyak.jpeg" 
   },
   { 
@@ -24,17 +24,17 @@ const teamMembers = [
   },
   { 
     name: "Apurbo Kumar das", 
-    role: "Webflow developer", 
+    role: "Wordpress Developer", 
     imgUrl: "/apurbo.jpeg" 
   },
   { 
     name: "Elias Mia", 
-    role: "Sr. UI/UX Designer", 
+    role: "AI Developer", 
     imgUrl: "/Elias Mia.jpg" 
   },
   { 
     name: "Sajjad Ullah", 
-    role: "Jr. AI Developer", 
+    role: "Mobile App Developer (React Native)", 
     imgUrl: "/Sajjad Ullah.jpg" 
   }
 ];
