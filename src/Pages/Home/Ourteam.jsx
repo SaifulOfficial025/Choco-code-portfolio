@@ -55,8 +55,32 @@ function Ourteam() {
           </p>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 hidden lg:block">
           <SocialCards cards={teamMembers} />
+        </div>
+
+        {/* MOBILE LAYOUT (2 Column Grid) */}
+        <div className="mt-10 grid grid-cols-2 gap-4 lg:hidden">
+          {teamMembers.map((card, index) => {
+            const isNafizur = card.name === "Nafizur Rahman";
+            return (
+              <div 
+                key={index} 
+                className={`relative w-full overflow-hidden rounded-2xl shadow-xl border border-black/10 group ${isNafizur ? 'order-first col-span-2 aspect-[5/6] sm:aspect-[4/3]' : 'aspect-[3/4]'}`}
+              >
+                <img 
+                  src={card.imgUrl} 
+                  loading="lazy" 
+                  alt={card.name} 
+                  className={`absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500 group-hover:scale-110 ${isNafizur ? 'object-top' : ''}`} 
+                />
+                <div className={`absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20 text-center flex flex-col justify-end ${isNafizur ? 'p-5 pt-16' : 'p-3 pt-10'}`}>
+                  <p className={`text-white font-bold font-serif leading-tight mb-0.5 ${isNafizur ? 'text-lg' : 'text-sm'}`}>{card.name}</p>
+                  <p className={`text-cc-yellow font-mono ${isNafizur ? 'text-xs' : 'text-[9px] sm:text-[10px]'}`}>{card.role}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -32,14 +32,72 @@ function Hero() {
       <div className="max-w-9xl mx-auto relative z-10 flex flex-col px-5">
         
         {/* HUGE BACKGROUND TEXT */}
-        <div className="absolute top-[8%] md:top-[12%] left-1/2 -translate-x-1/2 w-full text-center z-0 pointer-events-none">
+        <div className="hidden lg:block absolute top-[8%] md:top-[12%] left-1/2 -translate-x-1/2 w-full text-center z-0 pointer-events-none">
           <h1 className="text-[15vw] xl:text-[230px] font-black text-cc-black/5 leading-[0.85] tracking-tighter uppercase whitespace-nowrap font-serif">
             Nazifur 
           </h1>
         </div>
 
-        {/* MAIN CONTENT ROW */}
-        <div className="relative w-full flex flex-col lg:flex-row justify-between items-center mt-12 md:mt-24 xl:mt-10 z-30 mb-16 px-4 md:px-12 lg:px-20 xl:px-2">
+        {/* MOBILE LAYOUT (Phone Only) */}
+        <div className="lg:hidden relative w-full flex flex-col items-center mt-12 z-30 mb-16 px-4">
+          
+          <div className="inline-flex items-center space-x-2 text-cc-black font-medium text-sm mb-10 bg-white/80 backdrop-blur-md px-5 py-2.5 rounded-full border border-cc-green/20 shadow-sm w-fit mx-auto">
+            <span className="w-2.5 h-2.5 bg-cc-green rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+            <span>Open for freelance works.</span>
+          </div>
+
+          <div className="w-full flex justify-center items-center z-20 mb-8">
+             <div className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]">
+               <div className="w-full h-full rounded-full p-[8px] bg-gradient-to-r from-cc-yellow to-cc-green-light shimmer-btn drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] relative overflow-hidden group transition-all duration-300">
+                 <img 
+                   src="/Choco-Code-Profile-Picture.png" 
+                   alt="GaziAlauddin" 
+                   className="w-full h-full object-contain object-bottom rounded-full relative z-10 border-4 border-cc-yellow-100 "
+                 />
+               </div>
+             </div>
+          </div>
+
+          <div className="w-full flex flex-col justify-center items-center text-center z-30 mb-12">
+            <div className="text-[10vw] sm:text-[8vw] font-extrabold text-cc-black uppercase tracking-tighter leading-[1.1] mb-2 whitespace-nowrap">
+              Professional
+            </div>
+            <div className="text-[10vw] sm:text-[8vw] font-extrabold uppercase tracking-tighter leading-[1.1] w-full flex justify-center">
+              <span className="text-gradient-choco inline-block text-center min-w-[200px] whitespace-nowrap py-2">
+                {displayText}<span className="animate-blink text-cc-yellow font-mono font-light">|</span>
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 justify-center w-full mb-12">
+            {[{v:'187+',l:'Reviews'},{v:'4.9 ★',l:'Ratings'},{v:'Top Rated',l:'Seller'}].map((s,i) => (
+              <div key={i} className="bg-white/60 backdrop-blur-md rounded-2xl px-3 py-3 shadow-lg shadow-cc-green/5 border border-cc-green/10 text-center flex flex-col justify-center transition-transform hover:-translate-y-1 flex-1 min-w-[80px]">
+                <p className="font-extrabold text-xl text-cc-black font-serif">{s.v}</p>
+                <p className="text-[9px] font-bold text-cc-gray uppercase tracking-wider mt-1">{s.l}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center w-full px-2">
+            <p className='text-cc-gray text-base sm:text-lg font-semibold mb-4'>Hi! I'm Nazifur Rahman, Founder of Choco Code.</p>
+            <p className="text-cc-gray text-sm sm:text-base font-medium leading-relaxed mb-8">
+              I'm a Professional Developer working in the global marketplace, empowering your ideas with custom AI solutions, cutting-edge apps, and stunning websites.
+            </p>
+
+            <div className="flex justify-center mb-4 mt-6">
+              <a href="https://www.fiverr.com/choco_code">
+              <button className="bg-cc-black text-white text-sm font-bold py-4 px-8 rounded-full transition-all duration-300 flex items-center group shadow-xl">
+                Schedule Call
+                <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* DESKTOP CONTENT ROW */}
+        <div className="relative w-full hidden lg:flex flex-row justify-between items-center mt-24 xl:mt-10 z-30 mb-16 px-12 lg:px-20 xl:px-2">
           
           {/* Left Side: Info & Stats */}
           <div className="w-full lg:w-1/3 flex flex-col justify-center text-center lg:text-left mb-16 lg:mb-0 relative z-30 mx-auto lg:mx-0 pr-0 lg:pr-4 pl-10">

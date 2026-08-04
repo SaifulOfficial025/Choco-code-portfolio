@@ -16,7 +16,7 @@ function Footer() {
           <div className="lg:col-span-4">
             <div className="mb-6">
               <a href="#" className="flex items-center w-max">
-                <img src="/logo-whitetext.svg" alt="Choco Code Logo" className="h-10 md:h-20 -ml-4" />
+                <img src="/logo-whitetext.png" alt="Choco Code Logo" className="h-10 md:h-20 -ml-4" />
               </a>
             </div>
             <p className="text-white/60 text-[15px] mb-8 max-w-sm leading-relaxed">

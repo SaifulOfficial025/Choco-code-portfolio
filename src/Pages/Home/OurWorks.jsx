@@ -143,7 +143,7 @@ function OurWorks() {
             onClick={() => setIsExpanded(!isExpanded)}
             className="border border-cc-green/30 text-cc-green font-medium text-sm px-6 py-2.5 rounded-lg hover:bg-cc-green hover:text-white transition-all duration-300 shadow-sm flex items-center justify-center mx-auto space-x-2 group"
           >
-            <span>{isExpanded ? 'Show Less' : 'View All Projects'}</span>
+            <span>{isExpanded ? 'Show Less' : 'View More Projects'}</span>
             <svg className={`w-4 h-4 transform transition-transform duration-300 ${isExpanded ? 'rotate-[-90deg]' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>

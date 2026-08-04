@@ -3,12 +3,36 @@ import React, { useState, useEffect } from 'react';
 function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const sections = ['home', 'services', 'portfolio', 'teams', 'reviews'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -40% 0px' }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const navItems = ['Home', 'Services', 'Portfolio', 'Teams', 'Reviews'];
 
   return (
     <header className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -26,17 +50,20 @@ function Header() {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8">
-            {['Home', 'Services', 'Portfolio', 'Teams', 'Reviews'].map((item, i) => (
-              <a 
-                key={item}
-                href={`#${item.toLowerCase()}`} 
-                className={`relative text-sm font-medium transition-colors duration-300 ${
-                  i === 0 ? 'text-cc-green' : 'text-cc-black/60 hover:text-cc-green'
-                } after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-cc-green after:to-cc-yellow after:transition-all after:duration-300 hover:after:w-full`}
-              >
-                {item}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.toLowerCase();
+              return (
+                <a 
+                  key={item}
+                  href={`#${item.toLowerCase()}`} 
+                  className={`relative text-sm font-medium transition-colors duration-300 ${
+                    isActive ? 'text-cc-green' : 'text-cc-black/60 hover:text-cc-green'
+                  } after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:bg-gradient-to-r after:from-cc-green after:to-cc-yellow after:transition-all after:duration-300 hover:after:w-full ${isActive ? 'after:w-full' : 'after:w-0'}`}
+                >
+                  {item}
+                </a>
+              );
+            })}
           </nav>
 
           {/* CTA Button */}
@@ -72,16 +99,21 @@ function Header() {
           mobileOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
         }`}>
           <div className="glass-light rounded-xl p-6 space-y-4 shadow-xl">
-            {['Home', 'Services', 'Portfolio', 'Teams', 'Reviews'].map((item) => (
-              <a 
-                key={item}
-                href={`#${item.toLowerCase()}`} 
-                className="block text-cc-black/70 hover:text-cc-green text-sm font-medium transition-colors py-2 border-b border-cc-green/10"
-                onClick={() => setMobileOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.toLowerCase();
+              return (
+                <a 
+                  key={item}
+                  href={`#${item.toLowerCase()}`} 
+                  className={`block text-sm font-medium transition-all duration-300 py-2 border-b border-cc-green/10 ${
+                    isActive ? 'text-cc-green pl-2 border-l-[3px] border-l-cc-green' : 'text-cc-black/70 hover:text-cc-green hover:pl-1'
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item}
+                </a>
+              );
+            })}
             <a 
               href="#" 
               className="shimmer-btn block text-center bg-gradient-to-r from-cc-green to-cc-green-light text-white font-semibold py-3 px-6 rounded-lg text-sm mt-4"
