@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "../../Shared/Header"
 import Hero from "./Hero"
 import Ourservices from "./Ourservices"
@@ -23,6 +24,41 @@ const codeParticles = [
 ];
 
 const Home = () => {
+  const [isHungry, setIsHungry] = useState(true);
+
+  if (isHungry) {
+    return (
+      <div className="min-h-screen bg-choco-gradient flex flex-col items-center justify-center space-y-8 p-4 relative overflow-hidden">
+        {/* Floating Code Particles */}
+        {codeParticles.map((p, i) => (
+          <span
+            key={i}
+            className="particle animate-float font-mono"
+            style={{
+              top: p.top,
+              left: p.left,
+              right: p.right,
+              animationDelay: p.delay,
+              animationDuration: p.duration,
+              fontSize: `${12 + Math.random() * 14}px`,
+            }}
+          >
+            {p.text}
+          </span>
+        ))}
+        <div className="text-4xl md:text-6xl font-bold text-center z-10 text-black drop-shadow-lg">
+          গাজী ভাই, কিছু খাওয়ান 😋
+        </div>
+        <button
+          onClick={() => setIsHungry(false)}
+          className="z-10 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-full text-2xl font-bold shadow-lg transition-all transform hover:scale-105 hover:shadow-orange-500/50"
+        >
+          ওকে খাওয়াবো..
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-choco-gradient min-h-screen overflow-hidden relative">
       {/* Floating Code Particles */}
