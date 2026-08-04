@@ -16,7 +16,7 @@ function Footer() {
           <div className="lg:col-span-4">
             <div className="mb-6">
               <a href="#" className="flex items-center w-max">
-                <img src="/logo-01-02-01.svg" alt="Choco Code Logo" className="h-10 md:h-20 -ml-4" />
+                <img src="/logo-whitetext.svg" alt="Choco Code Logo" className="h-10 md:h-20 -ml-4" />
               </a>
             </div>
             <p className="text-white/60 text-[15px] mb-8 max-w-sm leading-relaxed">
@@ -103,7 +103,7 @@ function Footer() {
         <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent mb-8"></div>
 
         <div className="text-center text-[13px] text-white/30 pb-2 font-mono">
-          <span className="text-cc-yellow/30">{'/*'}</span> © 2024 Choco Code. All rights reserved. <span className="text-cc-yellow/30">{'*/'}</span>
+          <span className="text-cc-yellow/30"></span> © 2026 Choco Code. All rights reserved. <span className="text-cc-yellow/30"></span>
         </div>
       </div>
     </footer>

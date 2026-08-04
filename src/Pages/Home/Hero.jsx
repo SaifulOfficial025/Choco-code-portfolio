@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const roles = ["Web Developer", "App Developer", "CMS Developer"];
-const skills = ['Mobile App Development', "Flutter Developer", "React Native", 'Web App Development', "ReactJS", "Wordpress Development"];
+const skills = ['Mobile App Development', "Flutter Development", "React Native Development", 'Web App Development', "ReactJS Development", "Wordpress Development"];
 
 function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -64,7 +64,7 @@ function Hero() {
 
             {/* Stats */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start w-full mt-10">
-              {[{v:'250+',l:'Reviews'},{v:'5.0 ★',l:'Ratings'},{v:'Lvl 2',l:'Seller'}].map((s,i) => (
+              {[{v:'187+',l:'Reviews'},{v:'4.9 ★',l:'Ratings'},{v:'Top Rated',l:'Seller'}].map((s,i) => (
                 <div key={i} className="bg-white/60 backdrop-blur-md rounded-3xl px-5 py-4 shadow-lg shadow-cc-green/5 border border-cc-green/10 text-center flex flex-col justify-center transition-transform hover:-translate-y-1 flex-1 min-w-[90px] xl:min-w-[100px]">
                   <p className="font-extrabold text-2xl text-cc-black font-serif">{s.v}</p>
                   <p className="text-[10px] lg:text-xs font-bold text-cc-gray uppercase tracking-wider mt-1">{s.l}</p>

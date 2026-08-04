@@ -174,14 +174,14 @@ function Reviews() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-2">
+              <a href="https://www.fiverr.com/choco_code">
+
               <button className="shimmer-btn bg-gradient-to-r from-cc-green to-cc-green-light text-white font-bold py-3.5 px-8 rounded-xl transition-all duration-300 text-sm shadow-lg shadow-cc-green/20 hover:shadow-cc-green/40 hover:-translate-y-0.5 flex items-center">
                 Read More Reviews 
                 <svg className="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </button>
-              <button className="flex items-center text-cc-green text-sm font-bold hover:text-cc-green-dark transition-colors group">
-                Contact Us 
-                <svg className="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </button>
+              </a>
+            
             </div>
           </div>
         </div>
