@@ -20,7 +20,7 @@ const services = [
     icon: "📝", 
     title: "Wordpress Development", 
     desc: "Professional WordPress development including custom themes, plugins, and full-scale e-commerce solutions.", 
-    imgUrl: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=600&h=800&fit=crop"
+    imgUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=800&fit=crop"
   }
 ];
 

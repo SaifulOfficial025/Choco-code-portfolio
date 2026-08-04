@@ -20,12 +20,8 @@ function Header() {
         <div className="flex justify-between items-center">
           
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-1 group">
-            <span className="text-cc-green font-mono text-lg opacity-50 group-hover:opacity-100 transition-opacity">&lt;</span>
-            <span className="text-2xl md:text-3xl font-serif font-bold text-gradient-choco tracking-tight">
-              Choco Code
-            </span>
-            <span className="text-cc-green font-mono text-lg opacity-50 group-hover:opacity-100 transition-opacity">/&gt;</span>
+          <a href="#" className="flex items-center">
+            <img src="/logo-01-02-01.svg" alt="Choco Code Logo" className="h-8 md:h-16" />
           </a>
 
           {/* Navigation Links */}

@@ -15,12 +15,8 @@ function Footer() {
           {/* Column 1 - Brand & Subscription */}
           <div className="lg:col-span-4">
             <div className="mb-6">
-              <a href="#" className="flex items-center space-x-1 group w-max">
-                <span className="text-white/50 font-mono text-lg group-hover:text-cc-yellow transition-colors">&lt;</span>
-                <span className="text-3xl font-serif font-bold text-white tracking-tight">
-                  Choco Code
-                </span>
-                <span className="text-white/50 font-mono text-lg group-hover:text-cc-yellow transition-colors">/&gt;</span>
+              <a href="#" className="flex items-center w-max">
+                <img src="/logo-01-02-01.svg" alt="Choco Code Logo" className="h-10 md:h-12" />
               </a>
             </div>
             <p className="text-white/60 text-[15px] mb-8 max-w-sm leading-relaxed">
