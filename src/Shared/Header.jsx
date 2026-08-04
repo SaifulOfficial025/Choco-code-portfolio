@@ -45,7 +45,7 @@ function Header() {
           
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <img src="/logo-01-02-01.svg" alt="Choco Code Logo" className="h-8 md:h-16" />
+            <img src="/logo-01-02-01.svg" alt="Choco Code Logo" className="h-12 md:h-16" />
           </a>
 
           {/* Navigation Links */}
