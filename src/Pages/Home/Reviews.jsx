@@ -202,9 +202,13 @@ function Reviews() {
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:gap-10 items-center justify-items-center">
-            {['NEGOCIO CAPITAL', 'YOMIMA', 'WAYLEARN', 'Bestowe Gifts', 'MARTIN TRAVEL', 'Divine Echo'].map((name, i) => (
-              <div key={i} className="bg-white rounded-xl px-4 py-6 w-full flex items-center justify-center border border-cc-green/8 hover:border-cc-green/25 hover:shadow-lg hover:shadow-cc-green/5 transition-all duration-300 cursor-default group">
-                <span className="text-cc-gray/40 text-xs font-bold tracking-wider group-hover:text-cc-green transition-colors duration-300 text-center font-mono">{name}</span>
+            {[1, 2, 3, 4, 5, 6].map((num) => (
+              <div key={num} className="bg-white rounded-xl px-4 py-6 w-full h-24 flex items-center justify-center border border-cc-green/8 hover:border-cc-green/25 hover:shadow-lg hover:shadow-cc-green/5 transition-all duration-300 cursor-default group">
+                <img 
+                  src={`/partner_logo (${num}).png`} 
+                  alt={`Partner ${num}`} 
+                  className="max-h-20 max-w-full object-contain transition-transform duration-300 group-hover:scale-105" 
+                />
               </div>
             ))}
           </div>

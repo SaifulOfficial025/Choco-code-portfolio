@@ -18,24 +18,24 @@ const teamMembers = [
     imgUrl: "/istiyak.jpeg" 
   },
   { 
+    name: "Nafizur Rahman", 
+    role: "UI/UX Designer", 
+    imgUrl: "/Choco-Code-Profile-Picture - Copy.jpg" 
+  },
+  { 
     name: "Apurbo Kumar das", 
     role: "Webflow developer", 
     imgUrl: "/apurbo.jpeg" 
   },
   { 
-    name: "Rimon Islam", 
-    role: "UI/UX Designer", 
-    imgUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop" 
+    name: "Elias Mia", 
+    role: "Sr. UI/UX Designer", 
+    imgUrl: "/Elias Mia.jpg" 
   },
   { 
-    name: "Rafsan Munnaf", 
-    role: "AI Engineer", 
-    imgUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop" 
-  },
-  { 
-    name: "Tanvir Ahmed", 
-    role: "Backend Developer", 
-    imgUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=600&fit=crop" 
+    name: "Sajjad Ullah", 
+    role: "Jr. AI Developer", 
+    imgUrl: "/Sajjad Ullah.jpg" 
   }
 ];
 

@@ -54,10 +54,12 @@ function Hero() {
             </p>
 
             <div className="flex justify-center lg:justify-start mb-12 mt-10">
+              <a href="https://www.fiverr.com/choco_code">
               <button className="bg-cc-black text-white text-sm font-bold py-4 px-8 rounded-full transition-all duration-300 flex items-center group hover:-translate-y-1 shadow-xl hover:shadow-cc-black/30">
                 Schedule Call
                 <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </button>
+              </a>
             </div>
 
             {/* Stats */}
