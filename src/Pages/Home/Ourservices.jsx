@@ -6,21 +6,21 @@ const services = [
     icon: "🌐", 
     title: "Web Development", 
     desc: "Custom web development solutions using modern technologies to build fast, secure, and scalable websites tailored to your brand.", 
-    imgUrl: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=800&fit=crop"
+    imgUrl: "/Web-Development.png"
   },
   { 
     id: 2,
     icon: "📲", 
     title: "App Development", 
     desc: "End-to-end app development services crafting engaging, high-performance applications for diverse devices and platforms.", 
-    imgUrl: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=600&h=800&fit=crop"
+    imgUrl: "/App-Development.png"
   },
   { 
     id: 3,
     icon: "📝", 
     title: "Wordpress Development", 
     desc: "Professional WordPress development including custom themes, plugins, and full-scale e-commerce solutions.", 
-    imgUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=800&fit=crop"
+    imgUrl: "/Wordpress Website Development.png"
   }
 ];
 
